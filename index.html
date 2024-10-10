@@ -85,31 +85,32 @@
   <!-- Bifurcation image -->
   <img src="Bifurcation.png" alt="Bifurcation" id="bifurcation-image">
 
-  <script>
-    function solveMurrysLaw() {
-      const DPB = parseFloat(document.getElementById('DPB').value);
-      const DDB1 = parseFloat(document.getElementById('DDB1').value);
-      const DDB2 = parseFloat(document.getElementById('DDB2').value);
-      
-      const exponent = 2.39;
-      let result;
+<script>
+  function solveMurrysLaw() {
+    const DPB = parseFloat(document.getElementById('DPB').value);
+    const DDB1 = parseFloat(document.getElementById('DDB1').value);
+    const DDB2 = parseFloat(document.getElementById('DDB2').value);
+    
+    const exponent = 2.39;
+    let result;
 
-      if (isNaN(DPv)) {
-        // Calculate DPB
-        result = Math.pow(Math.pow(DDB1, exponent) + Math.pow(DDB2, exponent), 1 / exponent);
-        document.getElementById('output').textContent = `DPB is ${result.toFixed(2)}`;
-      } else if (isNaN(DDB1)) {
-        // Calculate DDB1
-        result = Math.pow(Math.pow(DPB, exponent) - Math.pow(DDB2, exponent), 1 / exponent);
-        document.getElementById('output').textContent = `DDB1 is ${result.toFixed(2)}`;
-      } else if (isNaN(DDB2)) {
-        // Calculate DDB2
-        result = Math.pow(Math.pow(DPB, exponent) - Math.pow(DDB1, exponent), 1 / exponent);
-        document.getElementById('output').textContent = `DDB2 is ${result.toFixed(2)}`;
-      } else {
-        document.getElementById('output').textContent = "Please leave one field empty to calculate.";
-      }
+    if (isNaN(DPB)) {
+      // Calculate DPB
+      result = Math.pow(Math.pow(DDB1, exponent) + Math.pow(DDB2, exponent), 1 / exponent);
+      document.getElementById('output').textContent = `DPB is ${result.toFixed(2)}`;
+    } else if (isNaN(DDB1)) {
+      // Calculate DDB1
+      result = Math.pow(Math.pow(DPB, exponent) - Math.pow(DDB2, exponent), 1 / exponent);
+      document.getElementById('output').textContent = `DDB1 is ${result.toFixed(2)}`;
+    } else if (isNaN(DDB2)) {
+      // Calculate DDB2
+      result = Math.pow(Math.pow(DPB, exponent) - Math.pow(DDB1, exponent), 1 / exponent);
+      document.getElementById('output').textContent = `DDB2 is ${result.toFixed(2)}`;
+    } else {
+      document.getElementById('output').textContent = "Please leave one field empty to calculate.";
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>

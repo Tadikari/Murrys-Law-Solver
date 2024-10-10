@@ -8,7 +8,7 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      margin-top: 50px;
+      margin-top: 70px;
     }
     input {
       margin: 10px;
@@ -26,13 +26,14 @@
       background-color: #45a049;
     }
     .output {
-      margin-top: 20px;
+      margin-top: 10px;
       font-weight: bold;
       color: #333;
     }
     img {
-      margin-top: 30px;
-      padding-top: 20px;
+      margin-top: 0px;
+      margin-bottom: 5px;
+      padding-top: 0px;
       max-width: 100%;
       height: auto;
     }
@@ -56,15 +57,15 @@
   </script>
 </head>
 <body>
-  <h1>Taylor-Morris Law Solver</h1>
-  <p>Solve for the missing variable in the equation:</p>
+  <h2 style="margin-bottom: 0px;" >Taylor-Morris Law Solver</h1>
+  <p style="margin-bottom: 30px; margin-top: 5px;">
+    <a href="https://pubmed.ncbi.nlm.nih.gov/38787386/" target="_blank">Taylor et al. 2024</a>
+  </p>
+  <p>Solve for the missing variable:</p>
   <p id="equation">
-      \( D_{PV}^{\quad 2.39} = D_{DB1}^{\quad 2.39} + D_{DB2}^{\quad 2.39} \)
+      \( D_{PV}^{\quad 2.39} = D_{DB1}^{\hspace{20pt} 2.39} + D_{DB2}^{\hspace{20pt} 2.39} \)
   </p>
 
-  <p>
-    <strong>Citation:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/38787386/" target="_blank">Taylor et al. 2024</a>
-  </p>
 
   <form id="solver-form">
     <label for="DPV">Diameter Parent Branch:</label>

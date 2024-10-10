@@ -68,8 +68,8 @@
 
 
   <form id="solver-form">
-    <label for="DPV">Diameter Parent Branch:</label>
-    <input type="number" id="DPv" placeholder="Enter DPB" step="any"><br>
+    <label for="DPB">Diameter Parent Branch:</label>
+    <input type="number" id="DPB" placeholder="Enter DPB" step="any"><br>
 
     <label for="DDB1">Diameter Daughter Branch 1:</label>
     <input type="number" id="DDB1" placeholder="Enter DDB1" step="any"><br>
@@ -87,7 +87,7 @@
 
   <script>
     function solveMurrysLaw() {
-      const DPv = parseFloat(document.getElementById('DPv').value);
+      const DPB = parseFloat(document.getElementById('DPB').value);
       const DDB1 = parseFloat(document.getElementById('DDB1').value);
       const DDB2 = parseFloat(document.getElementById('DDB2').value);
       
@@ -95,16 +95,16 @@
       let result;
 
       if (isNaN(DPv)) {
-        // Calculate DPv
+        // Calculate DPB
         result = Math.pow(Math.pow(DDB1, exponent) + Math.pow(DDB2, exponent), 1 / exponent);
-        document.getElementById('output').textContent = `DPv is ${result.toFixed(2)}`;
+        document.getElementById('output').textContent = `DPB is ${result.toFixed(2)}`;
       } else if (isNaN(DDB1)) {
         // Calculate DDB1
-        result = Math.pow(Math.pow(DPv, exponent) - Math.pow(DDB2, exponent), 1 / exponent);
+        result = Math.pow(Math.pow(DPB, exponent) - Math.pow(DDB2, exponent), 1 / exponent);
         document.getElementById('output').textContent = `DDB1 is ${result.toFixed(2)}`;
       } else if (isNaN(DDB2)) {
         // Calculate DDB2
-        result = Math.pow(Math.pow(DPv, exponent) - Math.pow(DDB1, exponent), 1 / exponent);
+        result = Math.pow(Math.pow(DPB, exponent) - Math.pow(DDB1, exponent), 1 / exponent);
         document.getElementById('output').textContent = `DDB2 is ${result.toFixed(2)}`;
       } else {
         document.getElementById('output').textContent = "Please leave one field empty to calculate.";

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Murrys Law Solver</title>
+  <title>Taylor-Morris Law Solver</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -30,27 +30,46 @@
       font-weight: bold;
       color: #333;
     }
+    img {
+      margin-top: 30px;
+      padding-top: 20px;
+      max-width: 100%;
+      height: auto;
+    }
+    #equation {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
   </style>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 </head>
 <body>
-  <h1>Murrys Law Solver</h1>
+  <h1>Taylor-Morris Law Solver</h1>
   <p>Solve for the missing variable in the equation:</p>
-  <p><strong>DPv^2.39 = DDB1^2.39 + DDB2^2.39</strong></p>
+  <p id="equation">
+    \( DPv^{2.39} = DDB1^{2.39} + DDB2^{2.39} \)
+  </p>
 
   <form id="solver-form">
-    <label for="DPv">DPv:</label>
+    <label for="DPv">Diameter parent branch:</label>
     <input type="number" id="DPv" placeholder="Enter DPv" step="any"><br>
 
-    <label for="DDB1">DDB1:</label>
+    <label for="DDB1">Diameter daughter branch 1:</label>
     <input type="number" id="DDB1" placeholder="Enter DDB1" step="any"><br>
 
-    <label for="DDB2">DDB2:</label>
+    <label for="DDB2">Diameter daughter branch 2:</label>
     <input type="number" id="DDB2" placeholder="Enter DDB2" step="any"><br>
 
     <button type="button" onclick="solveMurrysLaw()">Calculate</button>
   </form>
 
   <div class="output" id="output"></div>
+
+  <!-- Bifurcation image -->
+  <img src="bifurcation.png" alt="Bifurcation" id="bifurcation-image">
 
   <script>
     function solveMurrysLaw() {

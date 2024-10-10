@@ -36,10 +36,19 @@
       max-width: 100%;
       height: auto;
     }
+
+    /* Media query for larger screens (desktop) */
+    @media only screen and (min-width: 1024px) {
+      img {
+        max-width: 50%;
+      }
+    }  
+
     #equation {
       font-size: 20px;
       margin-bottom: 20px;
     }
+    
   </style>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script type="text/javascript" id="MathJax-script" async
@@ -50,17 +59,17 @@
   <h1>Taylor-Morris Law Solver</h1>
   <p>Solve for the missing variable in the equation:</p>
   <p id="equation">
-      \( D_{Pv}^{\quad 2.39} = D_{B1}^{\quad 2.39} + D_{B2}^{\quad 2.39} \)
+      \( D_{PV}^{\quad 2.39} = D_{DB1}^{\quad 2.39} + D_{DB2}^{\quad 2.39} \)
   </p>
 
   <form id="solver-form">
-    <label for="DPv">Diameter parent branch:</label>
+    <label for="DPV">Diameter Parent Branch:</label>
     <input type="number" id="DPv" placeholder="Enter DPv" step="any"><br>
 
-    <label for="DDB1">Diameter daughter branch 1:</label>
+    <label for="DDB1">Diameter Daughter Branch 1:</label>
     <input type="number" id="DDB1" placeholder="Enter DDB1" step="any"><br>
 
-    <label for="DDB2">Diameter daughter branch 2:</label>
+    <label for="DDB2">Diameter Daughter Branch 2:</label>
     <input type="number" id="DDB2" placeholder="Enter DDB2" step="any"><br>
 
     <button type="button" onclick="solveMurrysLaw()">Calculate</button>
